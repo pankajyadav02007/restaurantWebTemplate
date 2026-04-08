@@ -88,16 +88,16 @@ const Order = () => {
   return (
     <div className="pt-32 pb-24 min-h-screen bg-neutral-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center space-x-4 mb-10">
+        <div className="flex items-center space-x-4 mb-8 sm:mb-10">
           <Button 
             variant="ghost" 
             size="icon" 
             onClick={() => step === 'checkout' ? setStep('cart') : window.history.back()}
-            className="rounded-full hover:bg-orange-100 hover:text-orange-600"
+            className="rounded-full hover:bg-orange-100 hover:text-orange-600 shrink-0"
           >
-            <ArrowLeft className="h-6 w-6" />
+            <ArrowLeft className="h-5 w-5 sm:h-6 sm:w-6" />
           </Button>
-          <h1 className="text-4xl font-bold text-neutral-900">
+          <h1 className="text-2xl sm:text-4xl font-bold text-neutral-900 truncate">
             {step === 'cart' ? 'Your Shopping Cart' : 'Checkout Details'}
           </h1>
         </div>
@@ -113,61 +113,63 @@ const Order = () => {
                     layout
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100 flex items-center gap-6"
+                    className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-neutral-100 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
                   >
                     <img 
                       src={item.image} 
                       alt={item.name} 
-                      className="w-24 h-24 rounded-xl object-cover shrink-0"
+                      className="w-full sm:w-24 h-48 sm:h-24 rounded-xl object-cover shrink-0"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="flex-grow">
+                    <div className="flex-grow text-center sm:text-left">
                       <h3 className="text-lg font-bold text-neutral-900">{item.name}</h3>
                       <p className="text-orange-600 font-bold">${item.price}</p>
                     </div>
-                    <div className="flex items-center space-x-3 bg-neutral-50 p-2 rounded-xl border border-neutral-100">
+                    <div className="flex items-center justify-between w-full sm:w-auto gap-4">
+                      <div className="flex items-center space-x-3 bg-neutral-50 p-2 rounded-xl border border-neutral-100">
+                        <Button 
+                          variant="ghost" 
+                          size="icon" 
+                          className="h-8 w-8 rounded-lg hover:bg-white"
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        >
+                          <Minus className="h-4 w-4" />
+                        </Button>
+                        <span className="w-8 text-center font-bold">{item.quantity}</span>
+                        <Button 
+                          variant="ghost" 
+                          size="icon" 
+                          className="h-8 w-8 rounded-lg hover:bg-white"
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        >
+                          <Plus className="h-4 w-4" />
+                        </Button>
+                      </div>
                       <Button 
                         variant="ghost" 
                         size="icon" 
-                        className="h-8 w-8 rounded-lg hover:bg-white"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        className="text-neutral-400 hover:text-red-600 hover:bg-red-50 rounded-full"
+                        onClick={() => removeFromCart(item.id)}
                       >
-                        <Minus className="h-4 w-4" />
-                      </Button>
-                      <span className="w-8 text-center font-bold">{item.quantity}</span>
-                      <Button 
-                        variant="ghost" 
-                        size="icon" 
-                        className="h-8 w-8 rounded-lg hover:bg-white"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      >
-                        <Plus className="h-4 w-4" />
+                        <Trash2 className="h-5 w-5" />
                       </Button>
                     </div>
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      className="text-neutral-400 hover:text-red-600 hover:bg-red-50 rounded-full"
-                      onClick={() => removeFromCart(item.id)}
-                    >
-                      <Trash2 className="h-5 w-5" />
-                    </Button>
                   </motion.div>
                 ))}
               </div>
             ) : (
               <Card className="border-none shadow-xl rounded-3xl overflow-hidden">
-                <CardHeader className="bg-neutral-900 text-white p-8">
-                  <CardTitle className="text-2xl">Delivery Information</CardTitle>
+                <CardHeader className="bg-neutral-900 text-white p-6 sm:p-8">
+                  <CardTitle className="text-xl sm:text-2xl">Delivery Information</CardTitle>
                 </CardHeader>
-                <CardContent className="p-8 space-y-6">
+                <CardContent className="p-6 sm:p-8 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name</Label>
                       <Input 
                         id="name" 
                         placeholder="John Doe" 
-                        className="rounded-xl py-6"
+                        className="rounded-xl py-5 sm:py-6"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
@@ -177,7 +179,7 @@ const Order = () => {
                       <Input 
                         id="phone" 
                         placeholder="+1 (234) 567-890" 
-                        className="rounded-xl py-6"
+                        className="rounded-xl py-5 sm:py-6"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       />
@@ -188,7 +190,7 @@ const Order = () => {
                     <Textarea 
                       id="address" 
                       placeholder="Enter your full address..." 
-                      className="rounded-xl min-h-[120px]"
+                      className="rounded-xl min-h-[100px] sm:min-h-[120px]"
                       value={formData.address}
                       onChange={(e) => setFormData({...formData, address: e.target.value})}
                     />
@@ -196,7 +198,7 @@ const Order = () => {
                   
                   <div className="space-y-4">
                     <Label>Payment Method</Label>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {[
                         { id: 'UPI', icon: Wallet, label: 'UPI / Wallet' },
                         { id: 'Card', icon: CreditCard, label: 'Credit/Debit Card' },
@@ -206,13 +208,13 @@ const Order = () => {
                           key={method.id}
                           type="button"
                           onClick={() => setFormData({...formData, paymentMethod: method.id})}
-                          className={`flex flex-col items-center justify-center p-6 rounded-2xl border-2 transition-all ${
+                          className={`flex flex-row sm:flex-col items-center justify-center p-4 sm:p-6 rounded-2xl border-2 transition-all gap-4 sm:gap-0 ${
                             formData.paymentMethod === method.id 
                             ? 'border-orange-600 bg-orange-50 text-orange-600' 
                             : 'border-neutral-100 bg-white text-neutral-500 hover:border-neutral-200'
                           }`}
                         >
-                          <method.icon className="h-8 w-8 mb-2" />
+                          <method.icon className="h-6 w-6 sm:h-8 sm:w-8 sm:mb-2 shrink-0" />
                           <span className="text-sm font-bold">{method.label}</span>
                         </button>
                       ))}
@@ -226,10 +228,10 @@ const Order = () => {
           {/* Order Summary Sidebar */}
           <div className="lg:col-span-1">
             <Card className="border-none shadow-xl rounded-3xl overflow-hidden sticky top-32">
-              <CardHeader className="bg-orange-600 text-white p-8">
+              <CardHeader className="bg-orange-600 text-white p-6 sm:p-8">
                 <CardTitle>Order Summary</CardTitle>
               </CardHeader>
-              <CardContent className="p-8 space-y-6">
+              <CardContent className="p-6 sm:p-8 space-y-6">
                 <div className="space-y-4">
                   <div className="flex justify-between text-neutral-600">
                     <span>Subtotal</span>

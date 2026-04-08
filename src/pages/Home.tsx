@@ -109,7 +109,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen mb-10 ">
+    <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         <AnimatePresence mode="wait">
@@ -148,20 +148,20 @@ const Home = () => {
               >
                 {banners[currentSlide].tag}
               </motion.div>
-              <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black text-white mb-8 tracking-tighter leading-none drop-shadow-2xl">
+              <h1 className="text-4xl sm:text-6xl md:text-[8rem] lg:text-[10rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-none drop-shadow-2xl">
                 {banners[currentSlide].title.split(' ')[0]} <span className="text-orange-500 drop-shadow-[0_0_40px_rgba(234,88,12,0.6)]">{banners[currentSlide].title.split(' ')[1]}</span>
               </h1>
-              <p className="text-neutral-200 text-lg md:text-2xl max-w-3xl mx-auto mb-16 leading-relaxed font-medium drop-shadow-lg">
+              <p className="text-neutral-200 text-base sm:text-lg md:text-2xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-medium drop-shadow-lg px-4">
                 {banners[currentSlide].description}
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                <Link to="/menu">
-                  <Button size="lg" className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-white rounded-full px-14 py-9 text-2xl font-black group shadow-[0_0_50px_rgba(234,88,12,0.5)] transition-all hover:scale-110 active:scale-95 border-2 border-orange-500/20">
-                    Order Now <ArrowRight className="ml-3 h-8 w-8 group-hover:translate-x-3 transition-transform" />
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                <Link to="/menu" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto cursor-pointer bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 sm:px-14 py-6 sm:py-9 text-lg sm:text-2xl font-black group shadow-[0_0_50px_rgba(234,88,12,0.5)] transition-all hover:scale-110 active:scale-95 border-2 border-orange-500/20">
+                    Order Now <ArrowRight className="ml-2 sm:ml-3 h-6 w-6 sm:h-8 sm:w-8 group-hover:translate-x-3 transition-transform" />
                   </Button>
                 </Link>
-                <Link to="/booking">
-                  <Button size="lg" variant="outline" className="border-white/60 text-black hover:bg-black hover:text-white cursor-pointer rounded-full px-14 py-9 text-2xl font-black backdrop-blur-md transition-all hover:scale-110 active:scale-95 shadow-2xl">
+                <Link to="/booking" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full cursor-pointer sm:w-auto border-white/60 text-white hover:bg-black hover:text-white rounded-full px-8 sm:px-14 py-6 sm:py-9 text-lg sm:text-2xl font-black backdrop-blur-md transition-all hover:scale-110 active:scale-95 shadow-2xl">
                     Book A Table
                   </Button>
                 </Link>
@@ -251,16 +251,16 @@ const Home = () => {
       {/* 3D Menu Showcase */}
       <section className="py-32 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-6xl font-black text-neutral-900 mb-6 tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 mb-4 md:mb-6 tracking-tight"
             >
               Signature <span className="text-orange-600">3D Showcase</span>
             </motion.h2>
-            <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-500 max-w-2xl mx-auto text-base sm:text-lg px-4">
               Hover over our masterpieces to see them come to life.
             </p>
           </div>
@@ -337,11 +337,14 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
                 {/* Close Button */}
-                <DialogClose asChild className="absolute top-4 left-4 z-50">
-                  <Button variant="secondary" size="icon" className="rounded-full bg-white/20 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-black transition-all shadow-lg">
-                    <X className="h-5 w-5" />
-                  </Button>
-                </DialogClose>
+                <Button 
+                  variant="secondary" 
+                  size="icon" 
+                  className="absolute top-4 left-4 z-50 rounded-full bg-white/20 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-black transition-all shadow-lg"
+                  onClick={() => setSelectedItem(null)}
+                >
+                  <X className="h-5 w-5" />
+                </Button>
 
                 <div className="absolute bottom-6 left-6">
                   <Badge className={`${
@@ -428,33 +431,33 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            <div className="lg:w-1/2">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="lg:w-1/2 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
                 <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] mb-4">Why Choose Us</h4>
-                <h2 className="text-5xl md:text-6xl font-black mb-8 leading-tight">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 leading-tight">
                   Exceptional Services <br /> For Our <span className="text-orange-500">Valued Guests</span>
                 </h2>
-                <p className="text-neutral-400 text-lg mb-12 leading-relaxed">
+                <p className="text-neutral-400 text-base sm:text-lg mb-8 md:mb-12 leading-relaxed">
                   At Spice Garden, we go beyond just serving food. We curate experiences that cater to your every need, ensuring every visit is memorable and every meal is a celebration.
                 </p>
                 
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   {[
                     { title: "Quality Guaranteed", icon: ShieldCheck, text: "We use only the freshest, organic ingredients sourced from local farmers." },
                     { title: "Customer First", icon: Heart, text: "Our staff is trained to provide personalized service that makes you feel at home." }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start space-x-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                      <div className="bg-orange-600 p-3 rounded-xl">
-                        <item.icon className="h-6 w-6 text-white" />
+                    <div key={i} className="flex items-start space-x-4 p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-left">
+                      <div className="bg-orange-600 p-2 sm:p-3 rounded-xl shrink-0">
+                        <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                       </div>
                       <div>
-                        <h5 className="text-xl font-bold mb-1">{item.title}</h5>
-                        <p className="text-neutral-500 text-sm">{item.text}</p>
+                        <h5 className="text-lg sm:xl font-bold mb-1">{item.title}</h5>
+                        <p className="text-neutral-500 text-xs sm:text-sm">{item.text}</p>
                       </div>
                     </div>
                   ))}
@@ -513,27 +516,28 @@ const Home = () => {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                className="text-center lg:text-left"
               >
                 <h4 className="text-orange-600 font-bold uppercase tracking-widest mb-4">Our Legacy</h4>
-                <h2 className="text-5xl md:text-6xl font-black text-neutral-900 mb-8 leading-tight">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 mb-6 md:mb-8 leading-tight">
                   Crafting Memories <br /> Through <span className="text-orange-600">Flavor</span>
                 </h2>
-                <p className="text-neutral-600 text-lg mb-10 leading-relaxed">
+                <p className="text-neutral-600 text-base sm:text-lg mb-8 md:mb-10 leading-relaxed">
                   Spice Garden isn't just a restaurant; it's a journey through the heart of India. We've spent decades perfecting the balance of spices to bring you a taste that's both nostalgic and exciting.
                 </p>
-                <div className="flex items-center space-x-8 mb-12">
+                <div className="flex items-center justify-center lg:justify-start space-x-6 sm:space-x-8 mb-10 md:mb-12">
                   <div>
-                    <h3 className="text-4xl font-black text-neutral-900">25+</h3>
-                    <p className="text-neutral-500 text-sm uppercase tracking-widest">Years of Excellence</p>
+                    <h3 className="text-3xl sm:text-4xl font-black text-neutral-900">25+</h3>
+                    <p className="text-neutral-500 text-[10px] sm:text-sm uppercase tracking-widest">Years of Excellence</p>
                   </div>
                   <div className="w-px h-12 bg-neutral-200" />
                   <div>
-                    <h3 className="text-4xl font-black text-neutral-900">50k+</h3>
-                    <p className="text-neutral-500 text-sm uppercase tracking-widest">Happy Guests</p>
+                    <h3 className="text-3xl sm:text-4xl font-black text-neutral-900">50k+</h3>
+                    <p className="text-neutral-500 text-[10px] sm:text-sm uppercase tracking-widest">Happy Guests</p>
                   </div>
                 </div>
                 <Link to="/about">
-                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full px-10 py-7 text-lg font-bold">
+                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full px-8 sm:px-10 py-5 sm:py-7 text-base sm:text-lg font-bold">
                     Discover Our Story
                   </Button>
                 </Link>
@@ -544,11 +548,11 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 bg-neutral-50">
+      <section className="py-20 md:py-32 bg-neutral-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-black text-neutral-900 mb-6">What Our <span className="text-orange-600">Guests Say</span></h2>
-            <p className="text-neutral-500 max-w-xl mx-auto">Real experiences from real people who love our food.</p>
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-3xl sm:text-5xl font-black text-neutral-900 mb-4 md:mb-6">What Our <span className="text-orange-600">Guests Say</span></h2>
+            <p className="text-neutral-500 max-w-xl mx-auto text-sm sm:text-base px-4">Real experiences from real people who love our food.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

@@ -42,24 +42,24 @@ const Contact = () => {
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="text-4xl sm:text-5xl font-bold mb-4"
           >
             Get In Touch
           </motion.h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
             We'd love to hear from you. Whether you have a question about our menu, 
             want to book a private event, or just want to say hello.
           </p>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 -mt-12 relative z-20 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 -mt-12 relative z-20 pb-16 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-8">
-            <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white p-8">
-              <h3 className="text-2xl font-bold mb-8 text-neutral-900">Contact Information</h3>
-              <div className="space-y-8">
+          <div className="lg:col-span-1 space-y-6 sm:space-y-8">
+            <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-neutral-900">Contact Information</h3>
+              <div className="space-y-6 sm:space-y-8">
                 <div className="flex items-start space-x-4">
                   <div className="bg-orange-100 p-3 rounded-xl text-orange-600">
                     <MapPin className="h-6 w-6" />
@@ -106,36 +106,36 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white p-8 md:p-12">
+            <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white p-6 sm:p-8 md:p-12">
               {isSubmitted ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
+                  className="text-center py-8 sm:py-12"
                 >
-                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="h-12 w-12 text-green-600" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="h-10 w-10 sm:h-12 sm:w-12 text-green-600" />
                   </div>
-                  <h2 className="text-3xl font-bold text-neutral-900 mb-4">Message Sent!</h2>
-                  <p className="text-neutral-600 mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">Message Sent!</h2>
+                  <p className="text-neutral-600 mb-8 text-sm sm:text-base">
                     Thank you for reaching out. We'll get back to you as soon as possible.
                   </p>
                   <Button 
                     onClick={() => setIsSubmitted(false)}
-                    className="bg-neutral-900 hover:bg-black text-white px-10 py-6 rounded-xl"
+                    className="bg-neutral-900 hover:bg-black text-white px-8 sm:px-10 py-5 sm:py-6 rounded-xl"
                   >
                     Send Another Message
                   </Button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-neutral-700 font-semibold">Full Name</Label>
                       <Input 
                         id="name" 
                         placeholder="John Doe" 
-                        className="py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
+                        className="py-6 sm:py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
@@ -146,7 +146,7 @@ const Contact = () => {
                         id="email" 
                         type="email"
                         placeholder="john@example.com" 
-                        className="py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
+                        className="py-6 sm:py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                       />
@@ -157,16 +157,16 @@ const Contact = () => {
                     <Textarea 
                       id="message" 
                       placeholder="How can we help you?" 
-                      className="rounded-xl min-h-[200px] border-neutral-200 focus:ring-orange-500"
+                      className="rounded-xl min-h-[150px] sm:min-h-[200px] border-neutral-200 focus:ring-orange-500"
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                     />
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white py-8 rounded-2xl text-xl font-bold shadow-xl transition-all hover:scale-[1.01] flex items-center justify-center space-x-2"
+                    className="w-full bg-orange-600 hover:bg-orange-700 text-white py-6 sm:py-8 rounded-2xl text-lg sm:text-xl font-bold shadow-xl transition-all hover:scale-[1.01] flex items-center justify-center space-x-2"
                   >
-                    <Send className="h-6 w-6" />
+                    <Send className="h-5 w-5 sm:h-6 sm:w-6" />
                     <span>Send Message</span>
                   </Button>
                 </form>
@@ -176,8 +176,8 @@ const Contact = () => {
         </div>
 
         {/* Map Section */}
-        <div className="mt-24 max-w-6xl mx-auto">
-          <Card className="border-none shadow-xl rounded-3xl overflow-hidden h-[450px]">
+        <div className="mt-16 md:mt-24 max-w-6xl mx-auto">
+          <Card className="border-none shadow-xl rounded-3xl overflow-hidden h-[300px] sm:h-[450px]">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019297216734!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050c58!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1625123456789!5m2!1sen!2sus" 
               width="100%" 

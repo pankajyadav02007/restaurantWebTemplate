@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export const Navbar = () => {
   const { totalItems } = useCart();
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -18,11 +19,11 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Menu', path: '/menu' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/', icon: <Utensils className="h-5 w-5" /> },
+    { name: 'Menu', path: '/menu', icon: <ShoppingCart className="h-5 w-5" /> },
+    { name: 'Gallery', path: '/gallery', icon: <Instagram className="h-5 w-5" /> },
+    { name: 'About', path: '/about', icon: <Phone className="h-5 w-5" /> },
+    { name: 'Contact', path: '/contact', icon: <Mail className="h-5 w-5" /> },
   ];
 
   return (
@@ -90,30 +91,83 @@ export const Navbar = () => {
               </span>
             )}
           </Link>
-          <Sheet>
-            <SheetTrigger
-              render={
-                <Button variant="ghost" size="icon" className="text-white">
-                  <MenuIcon className="h-6 w-6" />
-                </Button>
-              }
-            />
-            <SheetContent side="right" className="bg-black text-white border-orange-900/50">
-              <div className="flex flex-col space-y-6 mt-10">
-                {navLinks.map((link) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    className="text-xl font-semibold hover:text-orange-500 transition-colors"
-                  >
-                    {link.name}
-                  </NavLink>
-                ))}
-                <Link to="/booking">
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-6 text-lg">
-                    Book Table
-                  </Button>
-                </Link>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-white"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <MenuIcon className="h-6 w-6" />
+            </Button>
+            <SheetContent side="right" className="bg-neutral-950 text-white border-orange-900/30 w-[300px]">
+              <div className="flex flex-col h-full">
+                <div className="flex items-center space-x-2 mb-12 mt-4">
+                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center">
+                    <Utensils className="text-white h-5 w-5" />
+                  </div>
+                  <span className="text-xl font-black text-white tracking-tighter">
+                    SPICE <span className="text-orange-500">GARDEN</span>
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-2">
+                  {navLinks.map((link, index) => (
+                    <motion.div
+                      key={link.path}
+                      initial={{ x: 20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <NavLink
+                        to={link.path}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={({ isActive }) => 
+                          `flex items-center space-x-4 p-4 rounded-xl transition-all duration-300 ${
+                            isActive 
+                              ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' 
+                              : 'text-neutral-400 hover:bg-white/5 hover:text-white'
+                          }`
+                        }
+                      >
+                        <div className={`p-2 rounded-lg ${location.pathname === link.path ? 'bg-white/20' : 'bg-neutral-900'}`}>
+                          {link.icon}
+                        </div>
+                        <span className="text-lg font-bold tracking-tight">{link.name}</span>
+                      </NavLink>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <div className="mt-12 pt-8 border-t border-white/5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 mb-6 px-4">Quick Contact</p>
+                  <div className="space-y-4 px-4">
+                    <div className="flex items-center space-x-3 text-neutral-400">
+                      <Phone className="h-4 w-4 text-orange-500" />
+                      <span className="text-sm font-medium">+1 (234) 567-890</span>
+                    </div>
+                    <div className="flex items-center space-x-3 text-neutral-400">
+                      <Mail className="h-4 w-4 text-orange-500" />
+                      <span className="text-sm font-medium">hello@spicegarden.com</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-auto space-y-6 pb-8">
+                  <Link to="/booking" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-8 text-xl font-black rounded-2xl shadow-xl shadow-orange-600/20 group">
+                      <span>Book A Table</span>
+                      <ArrowUp className="h-5 w-5 ml-2 rotate-90 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <div className="flex justify-center space-x-8">
+                    <a href="#" className="p-3 bg-neutral-900 rounded-full text-neutral-400 hover:text-orange-500 hover:bg-neutral-800 transition-all">
+                      <Instagram className="h-6 w-6" />
+                    </a>
+                    <a href="#" className="p-3 bg-neutral-900 rounded-full text-neutral-400 hover:text-orange-500 hover:bg-neutral-800 transition-all">
+                      <Facebook className="h-6 w-6" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </SheetContent>
           </Sheet>

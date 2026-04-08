@@ -19,23 +19,23 @@ const About = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6"
           >
             Our Culinary Journey
           </motion.h1>
-          <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto px-4">
             Discover the passion, tradition, and people behind Spice Garden.
           </p>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-8">The Story of Spice Garden</h2>
-              <div className="space-y-6 text-neutral-600 leading-relaxed">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6 md:mb-8">The Story of Spice Garden</h2>
+              <div className="space-y-4 sm:space-y-6 text-neutral-600 leading-relaxed text-sm sm:text-base">
                 <p>
                   Founded in 1995, Spice Garden began as a small family-run eatery with a simple mission: 
                   to share the rich, diverse flavors of Indian cuisine with our community. Our founder, 
@@ -61,25 +61,25 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-neutral-950 text-white">
+      <section className="py-16 md:py-24 bg-neutral-950 text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="bg-neutral-900 p-12 rounded-3xl border border-neutral-800">
-              <div className="bg-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
-                <Heart className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            <div className="bg-neutral-900 p-8 sm:p-12 rounded-3xl border border-neutral-800">
+              <div className="bg-orange-600 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-8">
+                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
-              <p className="text-neutral-400 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Mission</h3>
+              <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
                 To provide an authentic and memorable dining experience by serving high-quality, 
                 flavorful Indian cuisine crafted with traditional methods and modern hospitality.
               </p>
             </div>
-            <div className="bg-neutral-900 p-12 rounded-3xl border border-neutral-800">
-              <div className="bg-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
-                <Award className="h-8 w-8 text-white" />
+            <div className="bg-neutral-900 p-8 sm:p-12 rounded-3xl border border-neutral-800">
+              <div className="bg-orange-600 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-8">
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
-              <p className="text-neutral-400 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Vision</h3>
+              <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
                 To be the leading destination for Indian culinary excellence, recognized for our 
                 innovation, authenticity, and the warmth of our service.
               </p>
@@ -89,13 +89,13 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">Meet Our Master Chefs</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">Meet Our Master Chefs</h2>
             <div className="w-20 h-1 bg-orange-500 mx-auto" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {[
               { name: "Chef Rajan", role: "Executive Chef", img: "https://picsum.photos/seed/chef-1/400/500" },
               { name: "Chef Priya", role: "Pastry & Dessert Specialist", img: "https://picsum.photos/seed/chef-2/400/500" },

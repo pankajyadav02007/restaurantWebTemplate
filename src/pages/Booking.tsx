@@ -71,11 +71,11 @@ const Booking = () => {
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="text-4xl sm:text-5xl font-bold mb-4"
           >
             Book Your Table
           </motion.h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
             Secure your spot for an unforgettable dining experience. 
             Whether it's a romantic dinner or a family gathering, we've got you covered.
           </p>
@@ -83,13 +83,13 @@ const Booking = () => {
       </section>
 
       <div className="container mx-auto px-4 -mt-12 relative z-20">
-        <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Booking Form */}
           <div className="lg:w-2/3">
             <Card className="border-none shadow-2xl rounded-3xl overflow-hidden">
-              <CardContent className="p-8 md:p-12">
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <CardContent className="p-6 sm:p-8 md:p-12">
+                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-neutral-700 font-semibold">Full Name</Label>
                       <div className="relative">
@@ -97,7 +97,7 @@ const Booking = () => {
                         <Input 
                           id="name" 
                           placeholder="John Doe" 
-                          className="pl-12 py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
+                          className="pl-12 py-6 sm:py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
                           value={formData.name}
                           onChange={(e) => setFormData({...formData, name: e.target.value})}
                         />
@@ -110,7 +110,7 @@ const Booking = () => {
                         <Input 
                           id="phone" 
                           placeholder="+1 (234) 567-890" 
-                          className="pl-12 py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
+                          className="pl-12 py-6 sm:py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
                           value={formData.phone}
                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         />
@@ -123,7 +123,7 @@ const Booking = () => {
                         <Input 
                           id="date" 
                           type="date" 
-                          className="pl-12 py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
+                          className="pl-12 py-6 sm:py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
                           value={formData.date}
                           onChange={(e) => setFormData({...formData, date: e.target.value})}
                         />
@@ -136,7 +136,7 @@ const Booking = () => {
                         <Input 
                           id="time" 
                           type="time" 
-                          className="pl-12 py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
+                          className="pl-12 py-6 sm:py-7 rounded-xl border-neutral-200 focus:ring-orange-500"
                           value={formData.time}
                           onChange={(e) => setFormData({...formData, time: e.target.value})}
                         />
@@ -148,7 +148,7 @@ const Booking = () => {
                         value={formData.guests} 
                         onValueChange={(val) => setFormData({...formData, guests: val})}
                       >
-                        <SelectTrigger className="py-7 rounded-xl border-neutral-200">
+                        <SelectTrigger className="py-6 sm:py-7 rounded-xl border-neutral-200">
                           <div className="flex items-center">
                             <Users className="mr-3 h-5 w-5 text-neutral-400" />
                             <SelectValue placeholder="Select number of guests" />
@@ -164,7 +164,7 @@ const Booking = () => {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white py-8 rounded-2xl text-xl font-bold shadow-xl transition-all hover:scale-[1.01]"
+                    className="w-full bg-orange-600 hover:bg-orange-700 text-white py-6 sm:py-8 rounded-2xl text-lg sm:text-xl font-bold shadow-xl transition-all hover:scale-[1.01]"
                   >
                     Confirm Reservation
                   </Button>

@@ -59,11 +59,11 @@ const Menu = () => {
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="text-4xl sm:text-5xl font-bold mb-4"
           >
             Our Exquisite Menu
           </motion.h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
             Explore our diverse range of authentic dishes, from traditional favorites to modern twists.
           </p>
         </div>
@@ -71,14 +71,14 @@ const Menu = () => {
 
       {/* Filters & Search */}
       <div className="container mx-auto px-4 -mt-8 relative z-20">
-        <div className="bg-white p-6 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
+        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+          <div className="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
             {categories.map(cat => (
               <Button
                 key={cat}
                 variant={activeCategory === cat ? 'default' : 'outline'}
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-full px-6 ${activeCategory === cat ? 'bg-orange-600 hover:bg-orange-700' : ''}`}
+                className={`rounded-full px-5 sm:px-6 py-2 h-auto text-sm shrink-0 ${activeCategory === cat ? 'bg-orange-600 hover:bg-orange-700' : ''}`}
               >
                 {cat}
               </Button>
@@ -88,7 +88,7 @@ const Menu = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
             <Input 
               placeholder="Search dishes..." 
-              className="pl-10 rounded-full border-neutral-200 focus:ring-orange-500"
+              className="pl-10 rounded-full border-neutral-200 focus:ring-orange-500 py-6"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -97,8 +97,8 @@ const Menu = () => {
       </div>
 
       {/* Menu Grid */}
-      <div className="container mx-auto px-4 mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 mt-12 md:mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
               <motion.div
@@ -182,11 +182,14 @@ const Menu = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
                 {/* Close Button */}
-                <DialogClose asChild className="absolute top-4 left-4 z-50">
-                  <Button variant="secondary" size="icon" className="rounded-full bg-white/20 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-black transition-all shadow-lg">
-                    <X className="h-5 w-5" />
-                  </Button>
-                </DialogClose>
+                <Button 
+                  variant="secondary" 
+                  size="icon" 
+                  className="absolute top-4 left-4 z-50 rounded-full bg-white/20 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-black transition-all shadow-lg"
+                  onClick={() => setSelectedItem(null)}
+                >
+                  <X className="h-5 w-5" />
+                </Button>
 
                 <div className="absolute bottom-6 left-6">
                   <Badge className={`${

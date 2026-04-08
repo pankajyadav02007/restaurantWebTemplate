@@ -40,25 +40,25 @@ const Gallery = () => {
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="text-4xl sm:text-5xl font-bold mb-4"
           >
             Visual Experience
           </motion.h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
             Take a visual tour of our restaurant, from the vibrant dishes to our welcoming ambience.
           </p>
         </div>
       </section>
 
       {/* Filters */}
-      <div className="container mx-auto px-4 mt-12 text-center">
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+      <div className="container mx-auto px-4 mt-8 sm:mt-12 text-center">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-16">
           {categories.map(cat => (
             <Button
               key={cat}
               variant={filter === cat ? 'default' : 'outline'}
               onClick={() => setFilter(cat)}
-              className={`rounded-full px-8 ${filter === cat ? 'bg-orange-600 hover:bg-orange-700' : 'border-neutral-200'}`}
+              className={`rounded-full px-6 sm:px-8 py-2 h-auto text-sm ${filter === cat ? 'bg-orange-600 hover:bg-orange-700' : 'border-neutral-200'}`}
             >
               {cat}
             </Button>
@@ -97,27 +97,27 @@ const Gallery = () => {
       </div>
 
       {/* Video Section */}
-      <section className="mt-24 py-24 bg-neutral-900 text-white overflow-hidden">
+      <section className="mt-16 md:mt-24 py-16 md:py-24 bg-neutral-900 text-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold mb-6">Experience the Vibe</h2>
-              <p className="text-neutral-400 mb-8 leading-relaxed">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">Experience the Vibe</h2>
+              <p className="text-neutral-400 mb-8 leading-relaxed text-sm sm:text-base">
                 Watch our short film to get a glimpse of the passion we put into every dish 
                 and the atmosphere we've created for our guests.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                    <Play className="h-5 w-5 fill-white" />
+              <div className="space-y-4 max-w-md mx-auto lg:mx-0">
+                <div className="flex items-center space-x-4 text-left">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-600 rounded-full flex items-center justify-center shrink-0">
+                    <Play className="h-4 w-4 sm:h-5 sm:w-5 fill-white" />
                   </div>
-                  <span className="font-bold">Behind the Scenes: Our Kitchen</span>
+                  <span className="font-bold text-sm sm:text-base">Behind the Scenes: Our Kitchen</span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                    <Play className="h-5 w-5 fill-white" />
+                <div className="flex items-center space-x-4 text-left">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-600 rounded-full flex items-center justify-center shrink-0">
+                    <Play className="h-4 w-4 sm:h-5 sm:w-5 fill-white" />
                   </div>
-                  <span className="font-bold">The Art of Spices: A Documentary</span>
+                  <span className="font-bold text-sm sm:text-base">The Art of Spices: A Documentary</span>
                 </div>
               </div>
             </div>
