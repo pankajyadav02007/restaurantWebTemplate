@@ -1,0 +1,5 @@
+{
+  "name": "Spice Garden Restaurant",
+  "description": "A modern and professional restaurant website featuring online ordering, table booking, and a dynamic menu.",
+  "requestFramePermissions": ["geolocation"]
+}
