@@ -61,7 +61,7 @@ const Booking = () => {
       <section className="bg-neutral-900 py-24 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://picsum.photos/seed/booking-bg/1920/600" 
+            src="https://taverntulsa.com/wp-content/uploads/sites/8/2024/02/The-Tavern-Private-Chefs-Table.jpg" 
             className="w-full h-full object-cover" 
             alt="Booking Background"
             referrerPolicy="no-referrer"

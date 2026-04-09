@@ -8,15 +8,15 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    { id: 1, src: 'https://picsum.photos/seed/food-1/800/800', category: 'Food', title: 'Signature Biryani' },
-    { id: 2, src: 'https://picsum.photos/seed/interior-1/800/800', category: 'Interior', title: 'Main Dining Hall' },
-    { id: 3, src: 'https://picsum.photos/seed/kitchen-1/800/800', category: 'Kitchen', title: 'Our Busy Kitchen' },
-    { id: 4, src: 'https://picsum.photos/seed/food-2/800/800', category: 'Food', title: 'Paneer Tikka' },
-    { id: 5, src: 'https://picsum.photos/seed/interior-2/800/800', category: 'Interior', title: 'Private Lounge' },
-    { id: 6, src: 'https://picsum.photos/seed/food-3/800/800', category: 'Food', title: 'Butter Naan' },
-    { id: 7, src: 'https://picsum.photos/seed/interior-3/800/800', category: 'Interior', title: 'Outdoor Seating' },
-    { id: 8, src: 'https://picsum.photos/seed/kitchen-2/800/800', category: 'Kitchen', title: 'Fresh Ingredients' },
-    { id: 9, src: 'https://picsum.photos/seed/food-4/800/800', category: 'Food', title: 'Mango Lassi' },
+    { id: 1, src: 'https://tse3.mm.bing.net/th/id/OIP.PddFwcOFXJMoAYfRtFo3AwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3', category: 'Food', title: 'Signature Biryani' },
+    { id: 2, src: 'https://tse4.mm.bing.net/th/id/OIP.huOQFdfhV6xCfKkELXZoiwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3https://img.freepik.com/premium-photo/restaurant-interior_1029469-1418.jpg', category: 'Interior', title: 'Main Dining Hall' },
+    { id: 3, src: 'https://thumbs.dreamstime.com/z/restaurant-kitchen-27268708.jpg', category: 'Kitchen', title: 'Our Busy Kitchen' },
+    { id: 4, src: 'https://tse1.explicit.bing.net/th/id/OIP.F48Ta-u-I74gaRY18l_8sAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3', category: 'Food', title: 'Paneer Tikka' },
+    { id: 5, src: 'https://htsinteriors.com/wp-content/uploads/2025/04/Restaurant-Interior-Design-Ideas.jpg', category: 'Interior', title: 'Private Lounge' },
+    { id: 6, src: 'https://www.mowglistreetfood.com/wp-content/uploads/2023/01/Landing_image_Desktop.jpg', category: 'Food', title: 'Butter Naan' },
+    { id: 7, src: 'https://tse3.mm.bing.net/th/id/OIP.amQn-069ILTY9lIhukkvQQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3', category: 'Interior', title: 'Outdoor Seating' },
+    { id: 8, src: 'https://i.pinimg.com/originals/4f/53/68/4f53683d755112b54e8d7963930e896f.png', category: 'Kitchen', title: 'Fresh Ingredients' },
+    { id: 9, src: 'https://img.freepik.com/premium-photo/restaurant-food-hd-8k-wallpaper-stock-photographic-image_853645-66639.jpg?w=2000', category: 'Food', title: 'Mango Lassi' },
   ];
 
   const [filter, setFilter] = useState('All');
@@ -30,7 +30,7 @@ const Gallery = () => {
       <section className="bg-neutral-900 py-24 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://picsum.photos/seed/gallery-bg/1920/600" 
+            src="https://krghospitality.com/wp-content/uploads/2024/07/MicrosoftDesigner_AIGeneratedImage_RestaurantFoodOrderDelivery.jpeg" 
             className="w-full h-full object-cover" 
             alt="Gallery Background"
             referrerPolicy="no-referrer"

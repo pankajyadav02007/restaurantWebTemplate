@@ -49,7 +49,7 @@ const Menu = () => {
       <section className="bg-neutral-900 py-20 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://picsum.photos/seed/menu-bg/1920/600" 
+            src="https://img.freepik.com/premium-psd/delicious-burger-restaurant-menu-banner-template_609989-964.jpg?w=1480" 
             className="w-full h-full object-cover" 
             alt="Menu Background"
             referrerPolicy="no-referrer"

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu as MenuIcon, X, Phone, Mail, MapPin, Instagram, Facebook, ArrowUp, Utensils } from 'lucide-react';
+import { ShoppingCart, Menu as MenuIcon, X, Phone, Mail, MapPin, Instagram, Facebook, ArrowUp, Utensils, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -21,6 +21,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/', icon: <Utensils className="h-5 w-5" /> },
     { name: 'Menu', path: '/menu', icon: <ShoppingCart className="h-5 w-5" /> },
+    { name: 'Services', path: '/services', icon: <ShieldCheck className="h-5 w-5" /> },
     { name: 'Gallery', path: '/gallery', icon: <Instagram className="h-5 w-5" /> },
     { name: 'About', path: '/about', icon: <Phone className="h-5 w-5" /> },
     { name: 'Contact', path: '/contact', icon: <Mail className="h-5 w-5" /> },
@@ -75,7 +76,7 @@ export const Navbar = () => {
             </Button>
           </Link>
           <Link to="/booking">
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 font-bold shadow-lg shadow-orange-600/20 transition-all hover:scale-105 active:scale-95">
+            <Button className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-white rounded-full px-8 font-bold shadow-lg shadow-orange-600/20 transition-all hover:scale-105 active:scale-95">
               Book Table
             </Button>
           </Link>
@@ -202,6 +203,7 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm text-neutral-400">
               <li><Link to="/menu" className="hover:text-orange-500 transition-colors">Our Menu</Link></li>
+              <li><Link to="/services" className="hover:text-orange-500 transition-colors">Services</Link></li>
               <li><Link to="/booking" className="hover:text-orange-500 transition-colors">Reservations</Link></li>
               <li><Link to="/gallery" className="hover:text-orange-500 transition-colors">Gallery</Link></li>
               <li><Link to="/about" className="hover:text-orange-500 transition-colors">Our Story</Link></li>

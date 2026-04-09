@@ -9,6 +9,7 @@ import Booking from './pages/Booking';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
+import Services from './pages/Services';
 import { Toaster } from './components/ui/sonner';
 
 // Scroll to top on route change
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/order" element={<Order />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/gallery" element={<Gallery />} />
             </Routes>

@@ -9,7 +9,7 @@ const About = () => {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://picsum.photos/seed/about-hero/1920/1080" 
+            src="https://marketplace.canva.com/EAGFv9wbcDA/1/0/800w/canva-orange-and-white-modern-asian-food-restaurant-outdoor-banner-sG2Out-SBX0.jpg" 
             className="w-full h-full object-cover brightness-[0.4]" 
             alt="About Hero"
             referrerPolicy="no-referrer"
@@ -53,8 +53,8 @@ const About = () => {
               </div>
             </div>
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-              <img src="https://picsum.photos/seed/about-1/600/800" className="rounded-2xl shadow-lg mt-12" alt="Restaurant History" referrerPolicy="no-referrer" />
-              <img src="https://picsum.photos/seed/about-2/600/800" className="rounded-2xl shadow-lg" alt="Restaurant History" referrerPolicy="no-referrer" />
+              <img src="https://img.freepik.com/premium-photo/stylish-exterior-design-contemporary-cafeteria_952161-105356.jpg?w=2000" className="rounded-2xl shadow-lg mt-12" alt="Restaurant History" referrerPolicy="no-referrer" />
+              <img src="https://tse4.mm.bing.net/th/id/OIP.uhuabPtigRBfJUsO3ix2mQHaHp?rs=1&pid=ImgDetMain&o=7&rm=3" className="rounded-2xl shadow-lg" alt="Restaurant History" referrerPolicy="no-referrer" />
             </div>
           </div>
         </div>
@@ -97,9 +97,9 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {[
-              { name: "Chef Rajan", role: "Executive Chef", img: "https://picsum.photos/seed/chef-1/400/500" },
-              { name: "Chef Priya", role: "Pastry & Dessert Specialist", img: "https://picsum.photos/seed/chef-2/400/500" },
-              { name: "Chef Amit", role: "Tandoor Master", img: "https://picsum.photos/seed/chef-3/400/500" }
+              { name: "Chef Rajan", role: "Executive Chef", img: "https://img.freepik.com/premium-photo/beautiful-photo-chef-smiling-their-restaurant-kitchen-with-dishes-ingredients_1294789-810.jpg" },
+              { name: "Chef Priya", role: "Pastry & Dessert Specialist", img: "https://img.freepik.com/premium-photo/beautiful-korean-chef-girl-is-ready-cook-food-restaurant-kitchen_148840-15155.jpg?w=2000" },
+              { name: "Chef Amit", role: "Tandoor Master", img: "https://static.vecteezy.com/system/resources/thumbnails/041/439/142/small_2x/ai-generated-elevating-fine-dining-savoring-success-chef-standing-in-a-gourmet-restaurant-generative-ai-photo.jpg" }
             ].map((member, i) => (
               <motion.div 
                 key={i}

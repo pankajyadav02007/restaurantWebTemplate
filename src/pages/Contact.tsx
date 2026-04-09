@@ -32,7 +32,7 @@ const Contact = () => {
       <section className="bg-neutral-900 py-24 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://picsum.photos/seed/contact-bg/1920/600" 
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/0fe6bb94564795.5e82260252d18.jpg" 
             className="w-full h-full object-cover" 
             alt="Contact Background"
             referrerPolicy="no-referrer"
