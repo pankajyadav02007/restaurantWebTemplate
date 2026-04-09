@@ -343,7 +343,7 @@ const Home = () => {
                 <h3 className="text-2xl font-black text-neutral-900 mb-2 uppercase tracking-tight">Family Weekend Feast</h3>
                 <p className="text-neutral-500 text-sm mb-6">Enjoy a full course meal for the whole family at a special discounted price every weekend.</p>
                 <Link to="/menu">
-                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full w-full">Claim Offer</Button>
+                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full w-full cursor-pointer">Claim Offer</Button>
                 </Link>
               </div>
             </motion.div>
@@ -363,7 +363,7 @@ const Home = () => {
                 <h3 className="text-2xl font-black text-neutral-900 mb-2 uppercase tracking-tight">Happy Hour Drinks</h3>
                 <p className="text-neutral-500 text-sm mb-6">Join us between 4 PM to 7 PM and get a free drink with every appetizer you order.</p>
                 <Link to="/menu">
-                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full w-full">Claim Offer</Button>
+                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full w-full cursor-pointer">Claim Offer</Button>
                 </Link>
               </div>
             </motion.div>
@@ -442,7 +442,7 @@ const Home = () => {
                       ))}
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-orange-600 transition-colors">{dish.name}</h3>
-                    <Button size="lg" className="rounded-full bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 sm:px-8 shadow-lg shadow-orange-600/20 transition-all hover:scale-105 w-full sm:w-auto">
+                    <Button size="lg" className="rounded-full cursor-pointer bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 sm:px-8 shadow-lg shadow-orange-600/20 transition-all hover:scale-105 w-full sm:w-auto">
                       View Details
                     </Button>
                   </div>
@@ -632,7 +632,7 @@ const Home = () => {
               <h2 className="text-4xl md:text-6xl font-black text-neutral-900 tracking-tighter">Upcoming <span className="text-orange-600">Events</span></h2>
             </div>
             <Link to="/booking">
-              <Button className="bg-neutral-900 hover:bg-black text-white rounded-full px-10 py-6 font-bold">Book For Event</Button>
+              <Button className="bg-neutral-900 hover:bg-black text-white rounded-full px-10 py-6 font-bold  cursor-pointer">Book For Event</Button>
             </Link>
           </div>
 
@@ -650,7 +650,7 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-neutral-50 rounded-[3rem] border border-neutral-100 overflow-hidden hover:shadow-2xl transition-all group"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative cursor-pointer h-64 overflow-hidden">
                   <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
@@ -660,7 +660,7 @@ const Home = () => {
                 </div>
                 <div className="p-8">
                   <p className="text-neutral-500 text-sm leading-relaxed mb-6">{event.desc}</p>
-                  <Button variant="link" className="p-0 text-orange-600 font-bold hover:text-orange-700 flex items-center">
+                  <Button variant="link" className="p-0 cursor-pointer text-orange-600 font-bold hover:text-orange-700 flex items-center">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -730,7 +730,7 @@ const Home = () => {
                   </div>
                 </div>
                 <Link to="/about">
-                  <Button className="bg-neutral-900 hover:bg-black text-white rounded-full px-10 py-8 text-xl font-black shadow-xl transition-all hover:scale-105">
+                  <Button className="bg-neutral-900 cursor-pointer hover:bg-black text-white rounded-full px-10 py-8 text-xl font-black shadow-xl transition-all hover:scale-105">
                     Discover Our Story
                   </Button>
                 </Link>
@@ -743,7 +743,7 @@ const Home = () => {
       {/* Staff Section */}
       <section className="py-32 relative overflow-hidden">
         <GeometricBackground />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container cursor-pointer mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             <motion.h4 
               initial={{ opacity: 0, y: 10 }}
@@ -830,7 +830,7 @@ const Home = () => {
                 </div>
  
                 <Link to="/gallery">
-                  <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-10 py-8 text-xl font-black shadow-xl shadow-orange-600/20 transition-all hover:scale-105">
+                  <Button className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-white rounded-full px-10 py-8 text-xl font-black shadow-xl shadow-orange-600/20 transition-all hover:scale-105">
                     Explore Our Gallery
                   </Button>
                 </Link>
@@ -890,7 +890,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="md:py-2 py-18 relative overflow-hidden">
         <GeometricBackground />
         <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <div className="text-center mb-16">
@@ -969,7 +969,7 @@ const Home = () => {
               <Button 
                 type="submit" 
                 disabled={isAsking}
-                className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-600/20 disabled:opacity-50"
+                className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-600/20 disabled:opacity-50"
               >
                 {isAsking ? "Thinking..." : "Ask Question"}
               </Button>
@@ -979,7 +979,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials & Add Review */}
-      <section className=" relative overflow-hidden">
+      <section className="md:py-32 relative overflow-hidden">
         <GeometricBackground />
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row gap-20">

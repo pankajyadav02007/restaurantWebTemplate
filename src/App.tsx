@@ -25,7 +25,7 @@ export default function App() {
   return (
     <CartProvider>
       <Router>
-        <ScrollToTop />
+        <ScrollToTop/>
         <div className="flex flex-col min-h-screen font-sans selection:bg-orange-200 selection:text-orange-900">
           <Navbar />
           <main className="flex-grow">
